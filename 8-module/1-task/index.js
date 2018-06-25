@@ -33,6 +33,7 @@
 function SortableTable(rows) {
 	let arr = rows.slice(0);
 	this.el = makeTable(arr);
+	let self = this;
 	
 	function makeTable(arr) {
 		let table = document.createElement('table');
@@ -57,7 +58,7 @@ function SortableTable(rows) {
 	} 
 
 	function fillTable(arr) {
-		let tbody = document.body.querySelector('.clients__tbody');
+		let tbody = self.el.querySelector('.clients__tbody');
 		let bodyStrings = tbody.children;
 		
 		for (let i = 0; i < arr.length; i++) {
